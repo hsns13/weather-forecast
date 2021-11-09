@@ -1,0 +1,48 @@
+select {
+    border-color: $select-border;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 4px;
+    padding: 4px;
+    width: 150px;
+}
+
+select:focus-visible {
+    outline-color: $select-focus-visible;
+}
+
+.forecast__dropdown {
+    margin: 4px 0;
+}
+
+.forecast__dropdown span {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.forecast__description {
+    margin: 4px 0;
+}
+
+.forecast__description__main {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.forecast__description__description {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.forecast__description__temp {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.forecast__description__temp span {
+    font-weight: lighter;
+}
+
+.forecast__description__wind {
+    font-weight: bold;
+}

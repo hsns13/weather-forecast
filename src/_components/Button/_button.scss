@@ -1,0 +1,20 @@
+.button {
+    border: none;
+    border-radius: 8px;
+    background-color: $button-color;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px 2px;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: $button-color-hover;
+}
+
+.button--active {
+    background-color: $button-color-hover;
+}

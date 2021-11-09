@@ -1,0 +1,17 @@
+/*
+*   BEM naming convention
+*/
+@import './_base/settings';
+@import './_base/base';
+
+// import App
+@import '../App/app';
+
+// components
+@import '../_components/Button/button';
+@import '../_components/TableView/tableView';
+@import '../_components/Header/header';
+@import '../_components/Footer/footer';
+
+// import Pages
+@import '../Pages/WeatherForecast/weatherForecast';
