@@ -6,7 +6,7 @@ import { forecastActions } from '../../_store/_actions';
 import Button from '../../_components/Button';
 import { TableView } from '../../_components/TableView';
 
-import { fahrenheitToCelcius } from '../../_helper';
+import { fahrenheitToCelcius, capitalizeFirstLetter } from '../../_helper';
 
 class WeatherForecast extends Component {
     constructor(props) {
@@ -91,8 +91,8 @@ class WeatherForecast extends Component {
         let main = '', description = '', temp = '', wind = '';
 
         if (weather) {
-            main = weather.weather[0].main;
-            description = weather.weather[0].description;
+            main = capitalizeFirstLetter(weather.weather[0].main);
+            description = capitalizeFirstLetter(weather.weather[0].description);
 
             temp = fahrenheitToCelcius(weather.main.temp);
             wind = weather.wind.speed;
@@ -112,7 +112,7 @@ class WeatherForecast extends Component {
                     <div className="forecast__description__main">{main}</div>
                     <div className="forecast__description__description">{description}</div>
                     <div className="forecast__description__temp">{temp} <span>&#8451;</span></div>
-                    <div className="forecast__description__wind">Wind <span>{wind}</span></div>
+                    <div className="forecast__description__wind">Wind <span>{wind}</span> m/sec</div>
                 </div>
                 <div className="forecast__button">
                     <Button onClick={this.onClick} name={this.state.isButtonOpen ? this.state.buttonName[1] : this.state.buttonName[0]}>

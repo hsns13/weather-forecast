@@ -86,7 +86,7 @@ export class TableView extends Component {
                                         <td>{`${fahrenheitToCelcius(item.main.temp)} `}&#8451;</td>
                                         <td>{`${fahrenheitToCelcius(item.main.temp_min)} `}&#8451;</td>
                                         <td>{`${fahrenheitToCelcius(item.main.temp_max)} `}&#8451;</td>
-                                        <td>{item.wind.speed}</td>
+                                        <td>{`${item.wind.speed}`} m/sec</td>
                                         <td>{item.weather[0].description}</td>
                                     </tr>
                                 })
