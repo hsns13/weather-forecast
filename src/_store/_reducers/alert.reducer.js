@@ -6,18 +6,16 @@ export const alertReducer = (state = defaultState, action) => {
     switch (action.type) {
         case alertConstant.SUCCESS:
             return {
-                type: 'alert-success',
+                type: 'alert--success',
                 message: action.message
             };
         case alertConstant.ERROR:
             return {
-                type: 'alert-danger',
+                type: 'alert--danger',
                 message: action.message
             };
         case alertConstant.CLEAR:
-            return {
-
-            };
+            return null;
         default:
             return state;
     }

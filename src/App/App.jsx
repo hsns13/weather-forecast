@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+
+import { alertActions } from '../_store/_actions';
 
 import { Weather } from '../Pages/WeatherForecast';
 
@@ -9,10 +12,22 @@ import { Footer } from '../_components/Footer';
 
 const history = createBrowserHistory();
 
-export class App extends Component {
+class App extends Component {
+    onAlertClick = (e) => {
+        this.props.clearError();
+    }
+
     render() {
+        const { alertContainer } = this.props;
+
         return (
             <Fragment>
+                {
+                    alertContainer &&
+                    <div className={['alert', `alert--${alertContainer.type}`].join(' ')} onClick={this.onAlertClick}>
+                        {alertContainer.message}
+                    </div>
+                }
                 <Header />
                 <div className="container">
                     <Router history={history}>
@@ -28,4 +43,22 @@ export class App extends Component {
             </Fragment>
         );
     }
+}
+
+const mapStateToProps = ({ alertContainer }) => {
+    return {
+        alertContainer
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        clearError: () => dispatch(alertActions.clear())
+    };
+}
+
+const connectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+
+export {
+    connectedApp as App
 }

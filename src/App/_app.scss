@@ -4,3 +4,16 @@
     margin-left: 10%;
     flex: 1 0 auto;
 }
+
+.alert {
+    border: 1px solid red;
+    color: #03045e;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    padding: 8px 16px;
+}
+
+.alert--danger {
+    color: red;
+}

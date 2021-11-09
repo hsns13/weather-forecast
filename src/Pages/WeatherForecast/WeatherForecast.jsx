@@ -129,7 +129,6 @@ class WeatherForecast extends Component {
 
 const mapStateToProps = (state) => {
     const { forecastContainer } = state;
-    console.log(forecastContainer.forecast);
     return {
         weather: forecastContainer.weather,
         forecast: forecastContainer.forecast
