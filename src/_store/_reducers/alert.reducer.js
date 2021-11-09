@@ -1,6 +1,6 @@
 import { alertConstant } from '../_constants';
 
-const defaultState = {};
+const defaultState = null;
 
 export const alertReducer = (state = defaultState, action) => {
     switch (action.type) {
